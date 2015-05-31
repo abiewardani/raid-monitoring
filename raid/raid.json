@@ -1,0 +1,14 @@
+{
+    "md1": {
+        "ip":"192.168.0.2",
+        "status": "active",
+        "level":"raid1"
+    },
+    "md2": {
+        "ip":"192.168.0.2",
+        "status": "active",
+        "level":"raid0"
+    }
+}
+
+ 
