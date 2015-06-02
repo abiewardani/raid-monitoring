@@ -76,6 +76,7 @@ class HomeController extends BaseController {
     }
 
     public function sync(){
+
         $file =  public_path().'/raid/raid.json';
 
         $string = file_get_contents($file);
@@ -90,6 +91,8 @@ class HomeController extends BaseController {
                 )
             );
         }
+        echo "sync succes";
+        die();
      }
 
 
