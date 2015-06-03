@@ -128,7 +128,7 @@
                             <div class="list-group">
                                 <?php foreach($item as $key => $val){ ?>
                                 <a href="#" class="list-group-item">
-                                    {{ $val['level'] }}
+                                    {{ $val['partition_hardisk'] }}
                                 </a>
                                <?php }?>
                             </div>
@@ -165,7 +165,7 @@
             Morris.Bar({
                 element: 'morris-bar-chart',
                 data: <?php echo $json;?>,
-                xkey: 'level',
+                xkey: 'partition_hardisk',
                 ykeys: ['activePercent', 'degrededPercent'],
                 labels: ['Active %', 'Degreded %'],
                 hideHover: 'auto',

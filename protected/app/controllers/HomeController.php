@@ -42,11 +42,11 @@ class HomeController extends BaseController {
 
         $item = array();
         foreach($monitor as $key => $val){
-            $data = Monitor::where("level","=", $val->level)->get();
+            $data = Monitor::where("partition_hardisk","=", $val->partition_hardisk)->get();
             $total = count($data);
             $activePercent = $this->countActivePercent($data,$total);
             $degrededPercent = $this->countDegrededPercent($data,$total);
-            $buffer = array("level" => $val->level, "activePercent" => $activePercent, "degrededPercent" => $degrededPercent);
+            $buffer = array("partition_hardisk" => $val->partition_hardisk, "activePercent" => $activePercent, "degrededPercent" => $degrededPercent);
             array_push($item,$buffer);
         }
         $json = json_encode($item);
@@ -76,7 +76,7 @@ class HomeController extends BaseController {
     }
 
     public function sync(){
-
+        echo "abietampan";
         $file =  public_path().'/raid/raid.json';
 
         $string = file_get_contents($file);
