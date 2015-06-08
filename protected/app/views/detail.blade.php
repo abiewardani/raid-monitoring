@@ -138,6 +138,38 @@
                     </div>
 
                 </div>
+
+                <div class="col-lg-12">
+                    <h2>Bordered Table</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Level</th>
+                                    <th>Partition Hardsik</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $no = 1;
+                            foreach($monitor_summary as $key => $val){?>
+                                <tr>
+                                    <td><?php echo $no;?></td>
+                                    <td><?php echo $val->level;?></td>
+                                    <td><?php echo $val->partition_hardisk;?></td>
+                                    <td><?php echo $val->status;?></td>
+                                    <td><?php echo $val->date;?></td>
+                                </tr>
+                            <?php
+                            $no++;
+                            }?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->

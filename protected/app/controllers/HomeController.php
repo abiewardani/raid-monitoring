@@ -39,7 +39,7 @@ class HomeController extends BaseController {
     {
         $ip = Input::get("ip");
         $monitor = Monitor::groupby("level")->where("ip","=",$ip)->get();
-
+        $monitor_summary = Monitor::groupby("level")->where("ip","=",$ip)->orderby("date","desc")->paginate(15);
         $item = array();
         foreach($monitor as $key => $val){
             $data = Monitor::where("partition_hardisk","=", $val->partition_hardisk)->get();
@@ -50,7 +50,7 @@ class HomeController extends BaseController {
             array_push($item,$buffer);
         }
         $json = json_encode($item);
-        return View::make('detail',compact('monitor','item','json'));
+        return View::make('detail',compact('monitor','item','json','monitor_summary'));
     }
 
     public function countActivePercent($data,$total_rows){
